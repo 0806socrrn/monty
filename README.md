@@ -298,24 +298,3 @@ The opcode   ` nop `   doesn’t do anything.
 * GitHub repository:  ` monty ` 
  Self-paced manual review  Panel footer - Controls 
 [Done with the mandatory tasks? Unlock 14 advanced tasks now!](https://intranet.hbtn.io/projects/249/unlock_optionals) 
-
-×#### Recommended Sandbox
-[Running only]() 
-### 1 image(1/5 Sandboxes spawned)
-### Ubuntu 20.04
-Basic Ubuntu 20.04, with vim, emacs, curl, wget and all needed for Holberton Foundations
-SSHSFTP[Webterm](https://intranet.hbtn.io/user_containers/20136/webterm) 
-[Restart]() 
-[Destroy]() 
-#### Credentials
-Hostd0e3df2a9605.382951ab.hbtn-cod.ioUsernamed0e3df2a9605Passwordbec8653482c2d48c9d21#### Web access
-[HTTPS](https://d0e3df2a9605.382951ab.hbtn-cod.io/) 
-[HTTP](http://d0e3df2a9605.382951ab.hbtn-cod.io/) 
-[3000](http://d0e3df2a9605.382951ab.hbtn-cod.io:3000/) 
-[4000](http://d0e3df2a9605.382951ab.hbtn-cod.io:4000/) 
-[5000](http://d0e3df2a9605.382951ab.hbtn-cod.io:5000/) 
-[5001](http://d0e3df2a9605.382951ab.hbtn-cod.io:5001/) 
-[8000](http://d0e3df2a9605.382951ab.hbtn-cod.io:8000/) 
-[8080](http://d0e3df2a9605.382951ab.hbtn-cod.io:8080/) 
-#### Port mapping
-SSH49162HTTP49161HTTPS49160300049159MySQL49158400049157500049156500149155800049154808049153
