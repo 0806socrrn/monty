@@ -295,6 +295,4 @@ The nop opcode
 The opcode   ` nop `   doesn’t do anything.
 * Usage:  ` nop ` 
  Task URLs  Github information Repo:
-* GitHub repository:  ` monty ` 
- Self-paced manual review  Panel footer - Controls 
-[Done with the mandatory tasks? Unlock 14 advanced tasks now!](https://intranet.hbtn.io/projects/249/unlock_optionals) 
+* GitHub repository:  ` monty `  
