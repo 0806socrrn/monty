@@ -1,7 +1,4 @@
 # 0x19. C - Stacks, Queues - LIFO, FIFO
-## Details
-      By Julien Barbier          Weight: 2          Project to be done in teams of 2 people        (your team: Laura Socarras, Angie Aldana  Aldana                Ongoing project - started May 17, 2022 , must end by May 20, 2022           - you're done with 0% of tasks.              Checker was released at May 18, 2022 12:00 PM        An auto review will be launched at the deadline       ![](https://pbs.twimg.com/media/CFYYWy6UEAE9Ow-.png) 
-
 ## Resources
 Read or watch :
 * [Google](https://intranet.hbtn.io/rltoken/56-bDz7IrFgcH02EkGkB3w) 
@@ -150,38 +147,6 @@ Great!          You've completed the quiz successfully! Keep going!          (Sh
 
 * LILO
 
- Quiz question Tips #### 
-        
-        Question #1
-    
- Quiz question Body Which of these stacks are reversing the order of insertion? (select all possible answers)
- Quiz question Answers * FIFO
-
-* FILO
-
-* LIFO
-
-* LILO
-
- Quiz question Tips #### 
-        
-        Question #2
-    
- Quiz question Body What’s the command used to add a new element to a stack?
- Quiz question Answers * push
-
-* pop
-
- Quiz question Tips #### 
-        
-        Question #3
-    
- Quiz question Body What’s the command used to remove a new element from a stack?
- Quiz question Answers * push
-
-* pop
-
- Quiz question Tips ## Tasks
 ### 0. push, pall
           mandatory         Progress vs Score  Task Body Implement the   ` push `   and   ` pall `   opcodes.
 The push opcode
