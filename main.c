@@ -1,22 +1,20 @@
 #include "monty.h"
 /**
- * @brief 
- * 
+ * @brief
+ *
  */
 void parse_method(char *content)
 {
-   char *tokent1 = strtok(content, "\n");
+    char *tokent1 = strtok(content, "\n");
 
-   printf("%s",tokent1);
+    printf("%s", tokent1);
 }
-
-
 
 /**
  * @brief
  *
  */
-int main(int argc, char const *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
     char *methode_file = argv[1];
 

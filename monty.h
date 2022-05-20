@@ -67,5 +67,5 @@ void stack(stack_t **stack, unsigned int line_number);
 void queue(stack_t **stack, unsigned int line_number);
 void add_node(stack_t **stack, unsigned int line_number);
 
-extern unsigned int global_stack;
+extern char *global_stack;
 #endif

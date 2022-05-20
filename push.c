@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
         printf("Error\n");
         exit(EXIT_FAILURE);
     }
-    node1->n = global_stack;
+    node1->n = atoi(global_stack);
     node1->prev = NULL;
     node1->next = *stack;
 
