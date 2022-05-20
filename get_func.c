@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int (*get_method(char *method, unsigned int line_number))(stack_t **stack, unsigned int line_number)
+void (*get_method(char *method, unsigned int line_number))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t methods[] = {
 			{"push", push},
