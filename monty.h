@@ -70,5 +70,7 @@ void add_node(stack_t **stack, unsigned int line_number);
 void (*get_method(char *method, unsigned int line_number))(stack_t **stack, unsigned int line_number);
 
 extern char *global_stack;
+char *global_stack;
 extern stack_t *global_stack_head;
+stack_t *global_stack_head;
 #endif

@@ -7,11 +7,14 @@ void parse_method(char *content, unsigned int line_number)
 {
     char *method = strtok(content, " \n");
     char *args = strtok(NULL, " \n");
+    global_stack = args;
 
     void (*method_ptr)(stack_t * *stack, unsigned int line_number);
     method_ptr = get_method(method, line_number);
     // Create a new stack
     method_ptr(&global_stack_head, line_number);
+    free(method);
+    free(args);
 }
 /**
  * @brief
@@ -19,6 +22,7 @@ void parse_method(char *content, unsigned int line_number)
  */
 int main(int argc __attribute__((unused)), char *argv[])
 {
+    int line_number;
     char *method_file, *content;
     FILE *fd;
     if (argc != 2)
@@ -35,7 +39,14 @@ int main(int argc __attribute__((unused)), char *argv[])
     }
 
     getline(&content, NULL, fd);
-    // TODO: Pass the correct line number to the function.
-    parse_method(content, 1);
+
+    line_number = 0;
+    while (getline(&content, NULL, fd) != -1)
+    {
+        line_number++;
+        parse_method(content, line_number);
+        free(content);
+        content = NULL;
+    }
     return 0;
 }
