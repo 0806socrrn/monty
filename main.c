@@ -5,26 +5,32 @@
  */
 void parse_method(char *content, unsigned int line_number)
 {
-    char *method = strtok(content, " \n");
-    char *args = strtok(NULL, " \n");
-    global_stack = args;
+    char *method = strtok(content, " $\n");
+    char *args;
+    // TODO: Check if the method has a value
+    args = strtok(NULL, " $\n");
+    if (global_stack != NULL)
+        free(global_stack);
+    global_stack = strdup(args);
 
     void (*method_ptr)(stack_t * *stack, unsigned int line_number);
     method_ptr = get_method(method, line_number);
     // Create a new stack
     method_ptr(&global_stack_head, line_number);
-    free(method);
-    free(args);
 }
 /**
  * @brief
  *
  */
-int main(int argc __attribute__((unused)), char *argv[])
+int main(
+    int argc __attribute__((unused)),
+    char *argv[])
 {
     int line_number;
     char *method_file, *content;
     FILE *fd;
+    size_t *len;
+
     if (argc != 2)
     {
         fprintf(stderr, "USAGE: monty file\n");
@@ -38,10 +44,9 @@ int main(int argc __attribute__((unused)), char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    getline(&content, NULL, fd);
-
     line_number = 0;
-    while (getline(&content, NULL, fd) != -1)
+    content = NULL;
+    while (getline(&content, len, fd) != EOF)
     {
         line_number++;
         parse_method(content, line_number);

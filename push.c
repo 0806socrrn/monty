@@ -22,3 +22,21 @@ void push(stack_t **stack, unsigned int line_number)
         (*stack)->prev = node1;
     *stack = node1;
 }
+
+void pop(stack_t **stack, unsigned int line_number)
+{
+    if (*stack == NULL)
+    {
+        printf("L%d: can't pop an empty stack\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    if ((*stack)->next == NULL)
+        free(*stack), *stack = NULL;
+    else
+    {
+        stack_t *temp = *stack;
+        *stack = (*stack)->next;
+        (*stack)->prev = NULL;
+        free(temp);
+    }
+}
