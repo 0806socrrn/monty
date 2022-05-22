@@ -1,4 +1,19 @@
 #include "monty.h"
+
+void check_is_number(char *str, unsigned int line_number)
+{
+    int i = 0;
+    while (str[i] != '\0')
+    {
+        if (str[i] < '0' || str[i] > '9')
+        {
+            fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+            exit(EXIT_FAILURE);
+        }
+        i++;
+    }
+}
+
 /**
  * @brief
  *
@@ -13,9 +28,13 @@ void parse_method(char *content, unsigned int line_number)
     args = strtok(NULL, " $\n");
     /*TODO: Check if the method has a value*/
     if (args)
+    {
+        check_is_number(args, line_number);
         global_stack = strdup(args);
+    }
 
     method_ptr = get_method(method, line_number);
+    /** Check if number is valid */
     /*Create a new stack*/
     method_ptr(&global_stack_head, line_number);
 }
