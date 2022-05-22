@@ -16,7 +16,6 @@ void (*get_method(char *method, unsigned int line_number))(stack_t **stack, unsi
 			return (methods[i].f);
 		i++;
 	}
-	// TODO: If the method is not found, exit with an error.
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, method);
 	exit(EXIT_FAILURE);
 }
