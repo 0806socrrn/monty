@@ -25,6 +25,5 @@ void (*get_method(char *method))(stack_t **, unsigned int)
 			return (methods[i].f);
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, method);
-	exit(EXIT_FAILURE);
+	return (NULL);
 }
