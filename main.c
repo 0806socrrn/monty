@@ -3,15 +3,17 @@
 void check_is_number(char *str, unsigned int line_number)
 {
     int i = 0;
-    while (str[i] != '\0')
+
+    for (; str[i] != '\0'; i++)
     {
+        if (str[i] == '-' && i == 0)
+            continue;
         /** positive and negative numbers */
         if (str[i] < '0' || str[i] > '9')
         {
             fprintf(stderr, "L%d: usage: push integer\n", line_number);
             exit(EXIT_FAILURE);
         }
-        i++;
     }
 }
 
@@ -27,16 +29,18 @@ void parse_method(char *content, unsigned int line_number)
     if (!method || method[0] == ' ')
         return;
     args = strtok(NULL, " $\n");
-    /*TODO: Check if the method has a value*/
     if (args && (strcmp(method, "push") == 0))
     {
         check_is_number(args, line_number);
         global_stack = strdup(args);
     }
 
-    method_ptr = get_method(method, line_number);
-    /** Check if number is valid */
-    /*Create a new stack*/
+    method_ptr = get_method(method);
+    if (!method_ptr)
+    {
+        fprintf(stderr, "L%d: unknown instruction %s\n", line_number, method);
+        exit(EXIT_FAILURE);
+    }
     method_ptr(&global_stack_head, line_number);
 }
 /**

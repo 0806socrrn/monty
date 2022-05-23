@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void (*get_method(char *method, unsigned int line_number))(stack_t **stack, unsigned int line_number)
+void (*get_method(char *method))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t methods[] = {
 			{"push", push},
@@ -19,6 +19,5 @@ void (*get_method(char *method, unsigned int line_number))(stack_t **stack, unsi
 			return (methods[i].f);
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, method);
-	exit(EXIT_FAILURE);
+	return (NULL);
 }
