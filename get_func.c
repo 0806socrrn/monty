@@ -15,6 +15,7 @@ void (*get_method(char *method))(stack_t **, unsigned int)
 			{"pop", pop},
 			{"add", add},
 			{"swap", swap},
+
 			{NULL, NULL},
 	};
 
@@ -24,5 +25,6 @@ void (*get_method(char *method))(stack_t **, unsigned int)
 			return (methods[i].f);
 		i++;
 	}
-	return (NULL);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, method);
+	exit(EXIT_FAILURE);
 }
