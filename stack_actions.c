@@ -41,3 +41,28 @@ void pop(stack_t **stack, unsigned int line_number)
         free(temp);
     }
 }
+
+/**
+ * swap - Implement the swap opcode
+ *
+ * @param stack
+ * @param line_number
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+    stack_t *temp = *stack;
+    (void)line_number;
+
+    if (*stack == NULL || ((*stack)->next == NULL && (*stack)->next->next == NULL))
+    {
+        fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    *stack = (*stack)->next;
+    (*stack)->prev = NULL;
+    temp->next = (*stack)->next;
+    if ((*stack)->next != NULL)
+        (*stack)->next->prev = temp;
+    (*stack)->next = temp;
+    temp->prev = *stack;
+}

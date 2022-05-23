@@ -6,6 +6,9 @@ void (*get_method(char *method, unsigned int line_number))(stack_t **stack, unsi
 			{"push", push},
 			{"pall", pall},
 			{"pint", pint},
+			{"pop", pop},
+			{"add", add},
+			{"swap", swap},
 			{NULL, NULL},
 	};
 

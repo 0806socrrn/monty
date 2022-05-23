@@ -1,19 +1,21 @@
 #include "monty.h"
 /**
- * @brief
- *
+ * add - Add two digits given by the user.
+ * @stack: Pointer to the top of the stack.
+ * @line_number: Line number of the opcode.
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-    stack_t *top = *stack;
+    stack_t *temp = *stack;
     (void)line_number;
 
-    while (top)
+    if (*stack == NULL || ((*stack)->next == NULL && (*stack)->next->next == NULL))
     {
-        printf("%d\n", top->n);
-
-        top = top->next;
+        fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
     }
+    temp->next->n += temp->n;
+    pop(stack, line_number);
 }
 
 void pall(stack_t **stack, unsigned int line_number)
